@@ -1,5 +1,6 @@
 package org.demoqa;
 
+import static org.demoqa.TestData.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,16 +17,16 @@ public class WebTablesPageObject extends TestBase {
   @DisplayName("Добавление новой строки в таблицу при помощи формы")
   void successfulAddNewRecord() {
     webTablesPage.openElementsPage()
-        .openRadioPage()
+        .openWebPage()
         .addNewRecord()
-        .setFirstName("Stanislav")
-        .setLastName("Strelkov")
-        .setMail("testEmail@mail.ru")
-        .setAge("24")
-        .setSalary("90000")
-        .setDepartment("QA")
+        .setFirstName(firstName)
+        .setLastName(lastName)
+        .setMail(email)
+        .setAge(age)
+        .setSalary(salary)
+        .setDepartment(department)
         .submitBtn()
-        .checkNewRecord("Stanislav");
+        .checkNewRecord(firstName);
 
     LOGGER.info("New record added");
   }
@@ -34,9 +35,9 @@ public class WebTablesPageObject extends TestBase {
   @DisplayName("Форма регистрации осталась открытой из-за незаполнения обязательных полей")
   void registrationFormNotClose() {
     webTablesPage.openElementsPage()
-        .openRadioPage()
+        .openWebPage()
         .addNewRecord()
-        .setFirstName("Stas")
+        .setFirstName(firstName)
         .submitBtn()
         .checkRegistrFormOpen();
 
@@ -47,7 +48,7 @@ public class WebTablesPageObject extends TestBase {
   @DisplayName("Закрытие формы регистрации нажатием кнопки Esc")
   void registrationFormCloseByEsc() {
     webTablesPage.openElementsPage()
-        .openRadioPage()
+        .openWebPage()
         .addNewRecord()
         .sendKeyEscape()
         .checkRegistrFormClose();
@@ -59,12 +60,13 @@ public class WebTablesPageObject extends TestBase {
   @DisplayName("Изменение поля возраст у записи c Last Name Gentry")
   void successfulEditAgeInRecord() {
     webTablesPage.openElementsPage()
-        .openRadioPage()
-        .openEditForm("Gentry")
+        .openWebPage()
+        .openEditForm(rndLastName)
         .clearAge()
-        .setAge("35")
+        .setAge(age)
         .submitBtn()
-        .checkEditAgeInRecord("Gentry", "35");
+        .checkEditAgeInRecord(rndLastName, age);
+
     LOGGER.info("Age edited");
   }
 }

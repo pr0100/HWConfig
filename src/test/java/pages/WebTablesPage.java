@@ -31,7 +31,7 @@ public class WebTablesPage {
     return this;
   }
 
-  public WebTablesPage openRadioPage() {
+  public WebTablesPage openWebPage() {
     webTablesPage.click();
     return this;
   }
@@ -97,7 +97,7 @@ public class WebTablesPage {
   }
 
   public WebTablesPage checkRegistrFormClose() {
-    registrForm.shouldNotBe(Condition.visible, Duration.ofSeconds(1));
+    registrForm.shouldNotBe(visible, Duration.ofSeconds(1));
     assertFalse(registrForm.isDisplayed());
     return this;
   }

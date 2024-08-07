@@ -30,8 +30,8 @@ public class ElementsTestsPageObject extends TestBase {
 
   static Stream<String[]> provideData() {
     return Stream.of(
-        new String[]{"Strelkov Stas", "test@mail.ru", "new street, 111, 123"},
-        new String[]{"Nikita", "test2@m.com", "Old Town Road, 4"}
+        new String[]{TestData.fullName, TestData.email, TestData.address},
+        new String[]{TestData.fullName, TestData.email, TestData.address}
     );
   }
 
