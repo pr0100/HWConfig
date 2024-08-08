@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import pages.AlertsWindowsPage;
 
-public class AlertsWindowsTestPageObject extends TestBase {
+public class AlertsWindowsPageObjectTests extends TestBase {
 
   AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage();
   protected static final Logger LOGGER = LogManager.getLogger();
@@ -19,7 +19,8 @@ public class AlertsWindowsTestPageObject extends TestBase {
         .openWindowsPage()
         .openNewTab()
         .switchWindow(1)
-        .checkCurrentURL();
+        .checkCurrentURL()
+        .switchWindow(0);
     LOGGER.info("Switch current tab to new");
   }
 

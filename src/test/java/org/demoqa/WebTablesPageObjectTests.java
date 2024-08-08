@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.WebTablesPage;
 
-public class WebTablesPageObject extends TestBase {
+public class WebTablesPageObjectTests extends TestBase {
 
   WebTablesPage webTablesPage = new WebTablesPage();
   protected static final Logger LOGGER = LogManager.getLogger();
@@ -57,7 +57,7 @@ public class WebTablesPageObject extends TestBase {
   }
 
   @Test
-  @DisplayName("Изменение поля возраст у записи c Last Name Gentry")
+  @DisplayName("Изменение поля возраст у записи случайной записи")
   void successfulEditAgeInRecord() {
     webTablesPage.openElementsPage()
         .openWebPage()

@@ -13,7 +13,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import pages.ElementsPages;
 
-public class ElementsTestsPageObject extends TestBase {
+public class ElementsPageObjectTests extends TestBase {
 
   protected static final Logger LOGGER = LogManager.getLogger();
   ElementsPages elementsPages = new ElementsPages();

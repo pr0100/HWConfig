@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.BooksPage;
 
-public class BooksTestsPageObject extends TestBase {
+public class BooksPageObjectTests extends TestBase {
 
   BooksPage booksPage = new BooksPage();
   protected static final Logger LOGGER = LogManager.getLogger();
